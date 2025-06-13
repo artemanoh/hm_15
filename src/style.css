@@ -1,3 +1,119 @@
-body{
-    background-color: rgb(88, 196, 88);
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fafafa;
+  padding: 30px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 900px;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  justify-content: center;
+}
+
+.image-list li {
+  position: relative;
+  width: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.image-list li:hover {
+  transform: scale(1.05);
+}
+
+.image-list img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+
+.like {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #e74c3c;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, color 0.3s ease;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
+}
+
+.like:hover {
+  color: #ff6b81;
+  transform: scale(1.3);
+}
+
+.like.clicked {
+  animation: heartbeat 0.6s ease forwards;
+  color: #ff4757;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    color: #e74c3c;
+  }
+  25% {
+    transform: scale(1.4);
+    color: #ff6b81;
+  }
+  40% {
+    transform: scale(1);
+    color: #ff4757;
+  }
+  60% {
+    transform: scale(1.3);
+    color: #ff6b81;
+  }
+  100% {
+    transform: scale(1);
+    color: #e74c3c;
+  }
+}
+
+.like-count {
+  position: absolute;
+  bottom: 12px;
+  right: 45px;
+  font-weight: 600;
+  color: #e74c3c;
+  user-select: none;
+  font-size: 16px;
+  text-shadow: 0 0 4px #fff;
+}
+
+.button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgb(74 144 226 / 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #357abd;
 }
